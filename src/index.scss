@@ -1,0 +1,126 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  // color-scheme: light dark;
+  // color: rgba(255, 255, 255, 0.87);
+  // background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+.app {
+  --line-width: 10px;
+  --line-color: #000;
+
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; 
+  margin: 0 auto;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.line {
+  position:absolute;
+  background: var(--line-color);
+}
+
+.gallows {
+  border: 2px solid red;
+  position: relative;
+  height: 400px;
+   width: 320px;
+
+  &_base {
+    width: 250px;
+    height: 10px;
+    bottom: 0;
+    left: 0;
+  }
+  &_post {
+    height: 400px;
+    width: 10px;
+    margin-left: 120px;
+  }
+  &_beam {
+    height: 10px;
+    width: 200px;
+    margin-left: 120px;    
+  }
+  &_rope {
+    height: 50px;
+    width: 10px;
+    top: 0;
+    right: 0;
+  }
+
+  .head {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 10px solid var(--line-color);
+    background-color: white;
+    top: 50px;
+    right: -30px;
+  }
+  .body {
+    width: var(--line-width);
+    height: 100px;
+    top: 120px;
+    right: 0;
+  }
+  .left-arm {
+    width: 100px;
+    height: var(--line-width);
+    top: 150px;
+    right: 10px;
+    rotate: 30deg;
+    transform-origin: right bottom;
+  }
+  .right-arm {
+    width: 100px;
+    height: var(--line-width);
+    top: 150px;
+    right: -100px;
+    rotate: -30deg;
+    transform-origin: left bottom;
+  }
+  .left-leg {
+    width: 100px;
+    height: var(--line-width);
+    top: 210px;
+    right: 0;
+    rotate: -60deg;
+    transform-origin: right bottom;
+  }
+  .right-leg {
+    width: 100px;
+    height: var(--line-width);
+    top: 210px;
+    right: -90px;
+    rotate: 60deg;
+    transform-origin: left bottom;
+  }
+}
+
+
+
+.word {
+  display: flex;
+  gap: .25em;
+  font-size: 6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: monospace;
+
+  .underline {
+    border-bottom: .1em solid var(--line-color);
+  }
+}
