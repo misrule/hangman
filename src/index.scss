@@ -16,7 +16,7 @@
 
 .app {
   --line-width: 10px;
-  --line-color: rgb(31, 156, 31);
+  --line-color: black;
 
   max-width: 800px;
   display: flex;
@@ -24,7 +24,7 @@
   gap: 2rem; 
   margin: 0 auto;
   align-items: center;
-  border: 1px solid black;
+  border: 3px solid blue;
 }
 
 .line {
@@ -33,7 +33,7 @@
 }
 
 .gallows {
-  border: 2px solid red;
+  
   position: relative;
   height: 400px;
    width: 320px;
@@ -123,4 +123,59 @@
   .underline {
     border-bottom: .1em solid var(--line-color);
   }
+
+
 }
+
+.show {
+  visibility: visible;
+  color: blue;
+}
+.hide {
+  visibility: hidden;
+}
+
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  gap: .5em;
+   align-self: stretch;
+
+   .btn {
+    width: 100%;
+    border: 3px solid black;
+    background: none;
+    aspect-ratio: 1 / 1;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    padding: .5rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover:not(:disabled), 
+    &:focus:not(:disabled) {
+      background-color: hsl(200, 100%, 75%);
+    }
+    &.active {
+      background-color: hsl(200, 100%, 50%);
+      color: white;
+    }
+    &.inactive {
+      opacity: .3;
+    }
+   }
+  
+}
+
+.game-status {
+  
+  height: 3.5rem;
+  width: 100%;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;  
+  padding-block: .5rem;
+
+ }

@@ -1,13 +1,30 @@
 
-
-const HangmanWord = () => {
-  const word = "test"
+type HangmanWordProps = {
+  guessedLetters: string[]
+  wordToGuess: string
+}
+const HangmanWord = ({ guessedLetters, wordToGuess}: HangmanWordProps) => {
+  
+  const isInGuessed = (letter: string) => {
+    return guessedLetters.includes(letter)
+  }
+  
+  const letterStyle = (letter: string) => {
+    return isInGuessed(letter) ? "show" : "hide";
+  }
+  
   return (
     <div className="word">
       {
-        word.split("").map((letter, _) => {
-          return <span className="underline">{letter}</span>
+        wordToGuess.split("").map((letter, index) => {
+
+          return (<span className="underline" key={index}>
+            <span className={`hidden-letter ${letterStyle(letter)}`}>
+              {letter}
+            </span>
+          </span>)
         })
+      
       }
     </div>
   )
